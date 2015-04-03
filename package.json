@@ -1,0 +1,26 @@
+{
+  "name": "roy",
+  "version": "1.0.0",
+  "description": "A robotic memory for IRC",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zachdonovan/roy.git"
+  },
+  "keywords": [
+    "irc"
+  ],
+  "author": "Zach Donovan",
+  "license": "AGPL",
+  "bugs": {
+    "url": "https://github.com/zachdonovan/roy/issues"
+  },
+  "homepage": "https://github.com/zachdonovan/roy",
+  "dependencies": {
+    "lodash": "^3.6.0"
+  }
+}
