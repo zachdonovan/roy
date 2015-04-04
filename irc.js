@@ -1,30 +1,14 @@
 /*
  * a simple implementation of an IRC handler
+ * by Zachary Donovan
  * largely adapted from: https://gist.github.com/callumacrae/996827
- *
- *
- *
- *
- *
  */
+
 var net = require('net'),
     _ = require('lodash'),
     irc,
-    config;
+    config = require('./conf/irc.json');
 
-config = {
-  user: {
-          nick: 'roy',
-          user: 'roy',
-          real: 'A robotic memory for IRC by sigmoid',
-          pass: ''
-  },
-  server: {
-            addr: 'irc.foonetic.net',
-            port: 6667
-  },
-  chans: [ '#discoarse' ]
-};
 
 irc = {
   socket: new net.Socket(),

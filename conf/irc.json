@@ -1,0 +1,13 @@
+{
+  "user": {
+          "nick": "roy",
+          "user": "sigmoid",
+          "real": "A robotic memory for IRC by sigmoid",
+          "pass": ""
+  },
+  "server": {
+            "addr": "irc.foonetic.net",
+            "port": 6667
+  },
+  "chans": [ "#discoarse" ]
+}
