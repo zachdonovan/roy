@@ -1,3 +1,4 @@
 {
-    "path": "data/dumpfile"
+    "dir": "data",
+    "file": "dumpfile"
 }

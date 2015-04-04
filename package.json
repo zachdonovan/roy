@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/zachdonovan/roy",
   "dependencies": {
-    "lodash": "^3.6.0"
+    "lodash": "^3.6.0",
+    "mkdirp": "^0.5.0"
   }
 }
