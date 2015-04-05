@@ -76,7 +76,7 @@ irc.join = function (channel) {
 }
 
 irc.start = function (password) {
-  irc.config.user.pass = password;
+  irc.config.user.pass = password || '';
   irc.socket.setEncoding('ascii');
   irc.socket.setNoDelay();
   irc.socket.connect(config.server.port, config.server.addr);
