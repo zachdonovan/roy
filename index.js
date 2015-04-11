@@ -3,6 +3,6 @@ var irc = require('./irc'),
     persistence = require('./persistence');
 
 
-irc.on(/^(.*)$/, persistence.save);
+irc.on(/^(.*)PRIVMSG(.*)$/, persistence.save);
 
 irc.start(argv.password);
