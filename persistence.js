@@ -16,12 +16,12 @@ rethrow_errors = function (err) {
 mkdirp.sync(config.dir, rethrow_errors);
 
 stamp = function (data) {
-  time = moment.format('HH:mm');
+  time = moment().format('HH:mm');
   return time + ' - ' + data + '\n';
 }
 
 storagePath = function () {
-  date = moment.format('YYYY-MM-DD');
+  date = moment().format('YYYY-MM-DD');
   return config.dir + '/' + config.file + date;
 }
 
