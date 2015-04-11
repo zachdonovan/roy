@@ -1,5 +1,6 @@
 var fs = require('fs'),
     _ = require('lodash'),
+    moment = require('moment'),
     mkdirp = require('mkdirp'),
     config = require('./conf/persist.json'),
     exports = {},
@@ -15,7 +16,8 @@ rethrow_errors = function (err) {
 mkdirp.sync(config.dir, rethrow_errors);
 
 exports.save = function (data) {
-  fs.appendFile(config.dir + '/' + config.file, data + '\n', rethrow_errors);
+  date = moment.format('YYYY-MM-DD')
+  fs.appendFile(config.dir + '/' + config.file + date, data + '\n', rethrow_errors);
 };
 
 
