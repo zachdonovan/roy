@@ -15,9 +15,18 @@ rethrow_errors = function (err) {
 // make sure the desired persistence file exists
 mkdirp.sync(config.dir, rethrow_errors);
 
+stamp = function (data) {
+  time = moment.format('HH:mm');
+  return time + ' - ' + data + '\n';
+}
+
+storagePath = function () {
+  date = moment.format('YYYY-MM-DD');
+  return config.dir + '/' + config.file + date;
+}
+
 exports.save = function (data) {
-  date = moment.format('YYYY-MM-DD')
-  fs.appendFile(config.dir + '/' + config.file + date, data + '\n', rethrow_errors);
+  fs.appendFile(storagePath(), stamp(data), rethrow_errors);
 };
 
 
