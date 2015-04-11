@@ -40,6 +40,7 @@ irc.socket.on('connect', function () {
     irc.raw('NICK ' + config.user.nick);
     irc.raw('USER ' + config.user.user + ' 8 * :' + config.user.real);
     setTimeout(function () {
+      irc.identify(config.user.pass);
       _.map(config.chans, irc.join);
     }, 2000);
   }, 1000);
@@ -70,6 +71,10 @@ irc.handle = function (data) {
 irc.on(/^[^ ]+ 001 ([0-9a-zA-Z`_{|}\-\[\]\^]+) :/, function (info) {
   irc.nick = info[1];
 });
+
+irc.identify = function (password) {
+  irc.raw('PRIVMSG NickServ : identify ' +  password);
+}
 
 irc.join = function (channel) {
   irc.raw('JOIN ' + channel);
